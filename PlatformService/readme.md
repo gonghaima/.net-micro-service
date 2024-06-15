@@ -1,3 +1,12 @@
-- initialise```s
-dotnet new webapi -n PlatformService
-```
+- Initialise
+
+  ```dotnet new webapi -n PlatformService```
+- Add required packages
+  
+```dotnet new webapi -n PlatformService
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.InMemory
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
