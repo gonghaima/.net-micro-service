@@ -1,3 +1,4 @@
+Progress: 1:27:39
 - Initialise
 
   ```dotnet new webapi -n PlatformService```
