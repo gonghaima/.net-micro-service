@@ -8,10 +8,20 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("InMem"));
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
+builder.Services.AddControllers();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.UseRouting();
+// app.UseEndpoints(endpoints =>
+// {
+//     endpoints.MapControllers();
+//     // add my own routes
+// });
+#pragma warning disable ASP0014
+app.UseEndpoints(e => {e.MapControllers();});
+#pragma warning restore ASP0014
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -19,7 +29,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+PrepDb.PrepPopulation(app, app.Environment.IsProduction());
 app.UseHttpsRedirection();
 
 var summaries = new[]
