@@ -14,14 +14,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 app.UseRouting();
-// app.UseEndpoints(endpoints =>
-// {
-//     endpoints.MapControllers();
-//     // add my own routes
-// });
-#pragma warning disable ASP0014
-app.UseEndpoints(e => {e.MapControllers();});
-#pragma warning restore ASP0014
+app.MapControllers(); // Ensure this line is present to map controller routes
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

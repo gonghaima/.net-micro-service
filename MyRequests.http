@@ -1,0 +1,2 @@
+# get all platforms
+GET http://localhost:5050/api/platforms
