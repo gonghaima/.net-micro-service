@@ -1,2 +1,18 @@
-# get all platforms
+### get all platforms
 GET http://localhost:5050/api/platforms
+
+### via docker
+GET http://localhost:8080/api/platforms
+
+### get one platform
+GET http://localhost:5050/api/platforms/2
+
+### create a platform
+POST http://localhost:5050/api/platforms/
+content-Type: application/json
+
+{
+    "name": "Mighty Task",
+    "Publisher": "TE publisher",
+    "Cost": "424.99"
+}
