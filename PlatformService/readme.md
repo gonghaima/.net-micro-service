@@ -19,4 +19,5 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
   - docker run -p 8080:8080 platformservice
 
 
-
+- K8S
+  - kubectl apply -f platforms-depl.yaml
