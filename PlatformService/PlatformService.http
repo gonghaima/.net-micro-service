@@ -1,6 +1,58 @@
 @PlatformService_HostAddress = http://localhost:5050
+@PlatformService_DockerHostAddress = http://localhost:8080
+@PlatformService_K8SHostAddress = http://localhost:31340
+# @PlatformService_K8SHostAddress = http://0.0.0.0:31145
+# @PlatformService_K8SHostAddress = http://192.168.49.2:31340
 
 GET {{PlatformService_HostAddress}}/weatherforecast/
 Accept: application/json
 
-###
+### get all platforms
+GET http://localhost:5050/api/platforms
+
+### get one platform
+GET http://localhost:5050/api/platforms/2
+
+### create a platform
+POST http://localhost:5050/api/platforms/
+content-Type: application/json
+
+{
+    "name": "Mighty Task",
+    "Publisher": "TE publisher",
+    "Cost": "424.99"
+}
+
+
+### Docker: get all platforms
+GET {{PlatformService_DockerHostAddress}}/api/platforms
+
+### Docker: get one platform
+GET {{PlatformService_DockerHostAddress}}/api/platfoPlatformService/PlatformService.httpdrms/2
+
+### Docker: create a platform
+POST {{PlatformService_DockerHostAddress}}/api/platforms/
+content-Type: application/json
+
+{
+    "name": "Mighty Task",
+    "Publisher": "TE publisher",
+    "Cost": "424.99"
+}
+
+
+### K8S: get all platforms
+GET {{PlatformService_K8SHostAddress}}/api/platforms
+
+### K8S: get one platform
+GET {{PlatformService_K8SHostAddress}}/api/platfoPlatformService/PlatformService.httpdrms/2
+
+### K8S: create a platform
+POST {{PlatformService_K8SHostAddress}}/api/platforms/
+content-Type: application/json
+
+{
+    "name": "Mighty Task",
+    "Publisher": "TE publisher",
+    "Cost": "424.99"
+}

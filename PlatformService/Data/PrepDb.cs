@@ -19,18 +19,18 @@ namespace PlatformService.Data
 
         private static void SeedData(AppDbContext context, bool isProd)
         {
-            if(isProd)
-            {
-                Console.WriteLine("--> Attempting to apply migrations...");
-                try
-                {
-                    context.Database.Migrate();
-                }
-                catch(Exception ex)
-                {
-                    Console.WriteLine($"--> Could not run migrations: {ex.Message}");
-                }
-            }
+            // if(isProd)
+            // {
+            //     Console.WriteLine("--> Attempting to apply migrations...");
+            //     try
+            //     {
+            //         context.Database.Migrate();
+            //     }
+            //     catch(Exception ex)
+            //     {
+            //         Console.WriteLine($"--> Could not run migrations: {ex.Message}");
+            //     }
+            // }
             
             if(!context.Platforms.Any())
             {

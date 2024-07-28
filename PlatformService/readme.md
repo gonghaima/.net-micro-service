@@ -1,15 +1,15 @@
-Progress: 2:35:46
+Progress: 3:23:51  (TODO: Before keep going, need to fix the sql connection issue.)
 - Initialise
 
   ```dotnet new webapi -n PlatformService```
 - Add required packages
   
-```dotnet new webapi -n PlatformService
+```c#
+dotnet new webapi -n PlatformService
 dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
 dotnet add package Microsoft.EntityFrameworkCore
 dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ```
 
@@ -18,9 +18,9 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
   - add docker file, from microsoft website
   - docker build -t platformservice .
   - docker run -p 8080:8080 platformservice
+  - check url http://localhost:5050/api/Platforms
 
-
-- K8S
+- K8S (C:\Users\Steven\.kube\config)
   - kubectl apply -f platforms-depl.yaml
     - if the following error happening
       ```terminal
@@ -35,10 +35,32 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
         ```
       - ...
     - ..
-  - kubectl get deployments
-  - kubectl get pods
-  - kubectl logs <pod-name>
-    kubectl logs platforms-depl-68cdc76944-q49hr
+    - kubectl get deployments
+    - kubectl get pods
+    - kubectl logs <pod-name>
+      kubectl logs platforms-depl-68cdc76944-q49hr
+    - kubectl delete deployment <deployment-name>
+      kubectl delete deployment platforms-depl
+  - kubectl apply -f platforms-np-srv.yaml
+    - kubectl get services
+    - Issue with sql connection, due to the incorrect image value in platform-depl.yaml
+      - (under image directory) docker build -t platformservice:latest . 
+      - find the local images 
+      - minikube image load platformservice:latest
+      - update image to correct value (platformservice:latest)
+      - appy
+        kubectl apply -f platforms-depl.yaml
+      - verify
+        kubectl get pods
+      - ..
+ 
+    - ...
 
 - Initialise CommandsService
-  - ```dotnet new webapi -n CommandsService```
+  - script 
+    ```c#
+    dotnet new webapi -n CommandsService
+    dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+    ```
+  - ds
+  - d
