@@ -1,6 +1,7 @@
 @PlatformService_HostAddress = http://localhost:5050
 @PlatformService_DockerHostAddress = http://localhost:8080
-@PlatformService_K8SHostAddress = http://localhost:31340
+
+@PlatformService_K8SHostAddress = http://localhost:30311
 # @PlatformService_K8SHostAddress = http://0.0.0.0:31145
 # @PlatformService_K8SHostAddress = http://192.168.49.2:31340
 

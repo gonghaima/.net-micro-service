@@ -24,3 +24,8 @@ Check
 
 kubectl get pods 
 kubectl get services 
+
+Port forwarding seems working
+kubectl port-forward pod/platforms-depl-7fcc4f65bf-gvmm8 8080:8080
+Then access via http://localhost:8080/api/platforms
+
