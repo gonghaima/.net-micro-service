@@ -1,4 +1,4 @@
-Progress: 3:24:03  (TODO: Before keep going, need to fix the sql connection issue.)
+Progress: 4:17:58  (TODO: Before keep going, need to fix the sql connection issue.)
 - Initialise
 
   ```dotnet new webapi -n PlatformService```
