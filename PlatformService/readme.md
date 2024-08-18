@@ -1,4 +1,4 @@
-Progress: 4:17:58  (TODO: Before keep going, need to fix the sql connection issue.)
+Progress: 4:24:09 
 - Initialise
 
   ```dotnet new webapi -n PlatformService```
@@ -62,5 +62,9 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
     dotnet new webapi -n CommandsService
     dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
     ```
-  - ds
+  - Docker
+    - install docker
+    - docker build -t commandsservice .
+    - docker run -p 8080:8080 commandsservice
+    - 
   - d

@@ -7,3 +7,9 @@ Accept: application/json
 ###
 POST {{CommandsService_HostAddress}}/api/c/Platforms/
 Accept: application/json
+
+
+@CommandsService_DockerHostAddress = http://localhost:8080
+###
+GET {{CommandsService_DockerHostAddress}}/api/c/Platforms/
+Accept: application/json
