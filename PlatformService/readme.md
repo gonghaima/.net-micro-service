@@ -64,7 +64,16 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
     ```
   - Docker
     - install docker
-    - docker build -t commandsservice .
-    - docker run -p 8080:8080 commandsservice
+    - docker build -t commandservice .
+    - docker run -p 8080:8080 commandservice
     - 
+  - K8S
+    - kubectl rollout restart deployment platforms-depl
+    - kubectl apply -f commands-depl.yaml
   - d
+- d
+
+
+kubectl get deployments
+kubectl get services
+kubectl get pods

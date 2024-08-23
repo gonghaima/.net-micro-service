@@ -16,4 +16,4 @@ WORKDIR /App
 RUN apt-get update && apt-get install -y bash
 
 COPY --from=build-env /App/out .
-ENTRYPOINT [ "dotnet", "CommandsService.dll" ]
+ENTRYPOINT [ "dotnet", "CommandService.dll" ]

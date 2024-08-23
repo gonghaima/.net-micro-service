@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace CommandsService.Controllers
+namespace CommandService.Controllers
 {
     [Route("api/c/[controller]")]
     [ApiController]
-    public class PlatformsController : ControllerBase
+    public class CommandController : ControllerBase
     {
 
-        public PlatformsController()
+        public CommandController()
         {
         }
 
@@ -15,7 +15,7 @@ namespace CommandsService.Controllers
         public ActionResult TestInbound()
         {
             Console.WriteLine("--> Inbound GET # Command Service");
-            return Ok("Inbound test of from Platforms Controller");
+            return Ok("Inbound test of from Command Controller");
         }
 
         [HttpPost]

@@ -13,3 +13,6 @@ Accept: application/json
 ###
 GET {{CommandsService_DockerHostAddress}}/api/c/Platforms/
 Accept: application/json
+###
+GET {{CommandsService_DockerHostAddress}}/api/c/Command/
+Accept: application/json
